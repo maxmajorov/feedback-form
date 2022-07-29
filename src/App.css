@@ -1,0 +1,49 @@
+.burger {
+    position: fixed;
+    top: 25px;
+    float: right;
+    right: 13%;
+    z-index: 2100;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 23px;
+    width: 23px;
+    background-color: #242426;
+  }
+    .burgerBtn {
+      width: 20px;
+      height: 20px;
+      position:relative;
+      cursor: pointer;
+    }
+  
+    .burgerBtn span {
+      content: '';
+      position: absolute;
+      top: 8px;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+    }
+  
+    .burgerBtn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+     
+    }
+  
+    .burgerBtn::after {
+      content: '';
+      bottom: 0; 
+      position: absolute; 
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+    
+    }
+

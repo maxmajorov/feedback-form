@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "Poppins", sans-serif;
+    src: url("./assets/fonts/Poppins-Bold.ttf") format("ttf");
+    src: url("./assets/fonts/Poppins-Light.ttf") format("ttf");
+    src: url("./assets/fonts/Poppins-Medium.ttf") format("ttf");
+    src: url("./assets/fonts/Poppins-Thin.ttf") format("ttf");
+    /* font-display: swap;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'Raleway', sans-serif;
+  src: url("./assets/fonts/Raleway-Bold.ttf") format("ttf");
+  src: url("./assets/fonts/Raleway-Light.ttf") format("ttf");
+  src: url("./assets/fonts/Raleway-Medium.ttf") format("ttf");
+  src: url("./assets/fonts/Raleway-Thin.ttf") format("ttf");
+  /* font-display: swap;
+  font-style: normal; */
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p  {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+input, select, textarea, button {
+  border: none;
+  outline: none;
+}
+
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+form {
+  display: block;
+;
+}
+
