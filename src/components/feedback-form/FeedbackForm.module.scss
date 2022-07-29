@@ -1,0 +1,146 @@
+@import '../../common/styles/scss/variables.scss';
+
+.contactsBlock {
+  position: relative;
+  background-color: $backgroundColorLightDark;
+  padding: 120px 0;
+
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+    @media screen and (min-width: 320px) {
+      max-width: 280px;
+ 
+    }
+    
+    @media screen and (min-width: 576px) {
+      max-width: 550px;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 650px;
+    }
+
+    
+    @media screen and (min-width: 992px) {
+      max-width: 785px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      max-width: 900px;
+    }  
+
+    .inputField {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+           
+      .col_8 {      
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        .form {
+
+          .formRow {
+            display: flex;
+            flex-wrap: wrap;
+             
+            .col_6 {
+              width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+
+              @media (min-width: 992px) {
+                flex: 0 0 50%;
+                max-width: 46%;
+              }
+
+              .formGroup {
+                position: relative;
+              
+                .formInput {                 
+                  width: 90%;
+                  color: $textColor;
+                  font-size: 14px;
+                  background-color: $backgroundColorDark;
+                  padding: 20px; 
+                  margin-bottom: 30px;          
+                }
+
+                .errorMessage {
+                  position: absolute;
+                  top: 60px;
+                  left: 5px;
+                  font-size: 12px;
+                  color: red,
+                }
+              }
+            }
+  
+            .col_12 {              
+              width: 100%;
+              padding-right: 15px;
+              padding-left: 15px;
+
+              @media screen and (min-width: 320px) {
+                max-width: 84%; 
+                
+
+              @media screen and (min-width: 576px) {
+                max-width: 90%;
+              }
+
+              @media screen and (min-width: 768px) {
+                max-width: 90%;
+              }
+
+              @media screen and (min-width: 992px) {
+                max-width: 96%;
+              }
+
+              .formGroup {
+                position: relative;
+                margin-bottom: 30px;
+
+                textarea {
+                  width: 95%;
+                  min-height: 120px;
+                  padding: 20px;
+                  color: $textColor;
+                  font-size: 14px;
+                  background-color: $backgroundColorDark;
+                }
+                
+                .errorMessage {
+                  position: absolute;
+                  top: 162px;
+                  left: 5px;
+                  font-size: 12px;
+                  color: red,
+                }
+              }
+            }
+          }
+        }
+      }
+    }  
+  }
+}
+}
+
+input:focus, textarea:focus { 
+    transform: scale(1.01);
+    outline: 1px solid $primaryColor;
+    box-shadow: 0px 0px 12px 6px $primaryColor;
+    transition: ease-in-out 0.3s;  
+}
+
+
+
+
