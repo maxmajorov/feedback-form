@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/feedback-form/static/css/main.8b0cd97c.chunk.css",
+    "main.js": "/feedback-form/static/js/main.1c3c31b5.chunk.js",
+    "main.js.map": "/feedback-form/static/js/main.1c3c31b5.chunk.js.map",
+    "runtime-main.js": "/feedback-form/static/js/runtime-main.c04c7335.js",
+    "runtime-main.js.map": "/feedback-form/static/js/runtime-main.c04c7335.js.map",
+    "static/js/2.03a19520.chunk.js": "/feedback-form/static/js/2.03a19520.chunk.js",
+    "static/js/2.03a19520.chunk.js.map": "/feedback-form/static/js/2.03a19520.chunk.js.map",
+    "index.html": "/feedback-form/index.html",
+    "precache-manifest.bcf98b4b3773b551b81e2ca5d6dbe15d.js": "/feedback-form/precache-manifest.bcf98b4b3773b551b81e2ca5d6dbe15d.js",
+    "service-worker.js": "/feedback-form/service-worker.js",
+    "static/css/main.8b0cd97c.chunk.css.map": "/feedback-form/static/css/main.8b0cd97c.chunk.css.map",
+    "static/js/2.03a19520.chunk.js.LICENSE.txt": "/feedback-form/static/js/2.03a19520.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/feedback-form/static/media/Raleway-Thin.07ac22f3.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c04c7335.js",
+    "static/js/2.03a19520.chunk.js",
+    "static/css/main.8b0cd97c.chunk.css",
+    "static/js/main.1c3c31b5.chunk.js"
+  ]
+}
