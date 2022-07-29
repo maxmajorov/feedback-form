@@ -4,6 +4,7 @@ import { Button } from "../../common/components/Button/Button";
 import { Title } from "../../common/components/Title/Title";
 import classes from "./FeedbackForm.module.scss";
 import axios from "axios";
+import { handlePhoneInput } from "../../utils/phone-mask";
 
 type FeedbackFormPropsType = {
   setStatus: (status: null | string) => void;
@@ -30,6 +31,13 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
         errors.sender = "Required";
       }
 
+      if (!values.phone) {
+        errors.phone = "Required";
+      }
+      // else {
+      //  handlePhoneInput(values.phone);
+      // }
+
       if (!values.email) {
         errors.email = "Required";
       } else if (
@@ -50,7 +58,7 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
     },
 
     onSubmit: (values) => {
-      // console.log(JSON.stringify(values, null, 2));
+      console.log(JSON.stringify(values, null, 2));
       setBtnDisable(true);
       axios
         .post("https://gmail-smtp-nodejs.herokuapp.com/send-message", values)
@@ -110,9 +118,9 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
                       id="phone"
                       type="tel"
                       name="phone"
-                      placeholder="Phone"
+                      placeholder="+7(999)999-99-99"
                       onChange={formik.handleChange}
-                      value={formik.values.phone}
+                      value={handlePhoneInput(formik.values.phone)}
                       className={classes.formInput}
                     />
                     {formik.touched.phone && formik.errors.phone ? (
@@ -125,10 +133,10 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
                     ) : null}
 
                     <input
-                      id="subject"
-                      type="text"
-                      name="subject"
-                      placeholder="Subject"
+                      id="birthday"
+                      type="date"
+                      name="Birthday"
+                      placeholder="Birthday"
                       className={classes.formInput}
                       onChange={formik.handleChange}
                       value={formik.values.birthday}
