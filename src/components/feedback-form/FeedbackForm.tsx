@@ -29,14 +29,15 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
 
       if (!values.sender) {
         errors.sender = "Required";
+      } else if (
+        !/^([a-zA-Z]+){3,30}\s([a-zA-Z]+){3,30}$/gm.test(values.sender)
+      ) {
+        errors.sender = "Invalid name";
       }
 
       if (!values.phone) {
         errors.phone = "Required";
       }
-      // else {
-      //  handlePhoneInput(values.phone);
-      // }
 
       if (!values.email) {
         errors.email = "Required";
@@ -52,6 +53,10 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
 
       if (!values.textMessage) {
         errors.textMessage = "Required";
+      } else if (values.textMessage.length < 10) {
+        errors.textMessage = "The message length is less than 10 characters";
+      } else if (values.textMessage.length > 300) {
+        errors.textMessage = "Long message! Use less than 300 characters";
       }
 
       return errors;
@@ -64,7 +69,6 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
         .post("https://gmail-smtp-nodejs.herokuapp.com/send-message", values)
         .then((res) => {
           setStatus(res.data);
-          // alert("Your message has been send");
           setBtnDisable(false);
         });
 
@@ -78,7 +82,11 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
         <Title title="get in touch" />
         <div className={classes.inputField}>
           <div className={classes.col_8}>
-            <form onSubmit={formik.handleSubmit} className={classes.form}>
+            <form
+              onSubmit={formik.handleSubmit}
+              className={classes.form}
+              noValidate
+            >
               <div className={classes.formRow}>
                 <div className={classes.col_6}>
                   <div className={classes.formGroup}>
@@ -88,7 +96,7 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
                       name="sender"
                       placeholder="First name / Last name"
                       onChange={formik.handleChange}
-                      value={formik.values.sender}
+                      value={formik.values.sender.toUpperCase()}
                       className={classes.formInput}
                     />
                     {formik.touched.sender && formik.errors.sender ? (
@@ -96,24 +104,6 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
                         {formik.errors.sender}
                       </div>
                     ) : null}
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      onChange={formik.handleChange}
-                      value={formik.values.email}
-                      className={classes.formInput}
-                    />
-                    {formik.touched.email && formik.errors.email ? (
-                      <div className={classes.errorMessage}>
-                        {formik.errors.email}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-                <div className={classes.col_6}>
-                  <div className={classes.formGroup}>
                     <input
                       id="phone"
                       type="tel"
@@ -131,11 +121,29 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
                         {formik.errors.phone}
                       </div>
                     ) : null}
+                  </div>
+                </div>
+                <div className={classes.col_6}>
+                  <div className={classes.formGroup}>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      onChange={formik.handleChange}
+                      value={formik.values.email}
+                      className={classes.formInput}
+                    />
+                    {formik.touched.email && formik.errors.email ? (
+                      <div className={classes.errorMessage}>
+                        {formik.errors.email}
+                      </div>
+                    ) : null}
 
                     <input
                       id="birthday"
                       type="date"
-                      name="Birthday"
+                      name="birthday"
                       placeholder="Birthday"
                       className={classes.formInput}
                       onChange={formik.handleChange}
@@ -160,6 +168,7 @@ export const FeedbackForm: React.FC<FeedbackFormPropsType> = ({
                       className={classes.formInput}
                       onChange={formik.handleChange}
                       value={formik.values.textMessage}
+                      maxLength={301}
                     />
                     {formik.touched.textMessage && formik.errors.textMessage ? (
                       <div className={classes.errorMessage}>

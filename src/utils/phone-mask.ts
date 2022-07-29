@@ -35,7 +35,5 @@ export const handlePhoneInput = (phone: string) => {
     formattedInputValue = "+" + inputNumbersValue.substring(0, 16);
   }
 
-  console.log(inputNumbersValue, formattedInputValue);
-
   return formattedInputValue;
 };
